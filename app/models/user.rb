@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    # Associations
+  # Associations
   has_many :comments
 
   # Validations
