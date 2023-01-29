@@ -3,7 +3,7 @@ class User < ApplicationRecord
   #has_many :comments
   
    # Will return an array of follows for the given user instance
-   has_many :received_follows, foreign_key: :followed_user_id, class_name: "Follow"
+   has_many :received_follows, foreign_key: :follower_user_id, class_name: "Follow"
 
    # Will return an array of users who follow the user instance
    has_many :followers, through: :received_follows, source: :follower
@@ -17,8 +17,8 @@ class User < ApplicationRecord
    has_many :followings, through: :given_follows, source: :followed_user
 
 
-  # Validations
-  #validates :name, presence: true, uniqueness: true
+  #Validations
+   #validates :name, presence: true, uniqueness: true
 
   # Enumerations
   #enum currency: [:ars, :usd, :eur] # Revisar buenas prácticas
